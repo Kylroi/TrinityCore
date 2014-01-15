@@ -992,7 +992,7 @@ bool GameObject::ActivateToQuest(Player* target) const
             GameObject* go = const_cast<GameObject*>(this);
             uint32 questStatus = DIALOG_STATUS_NONE;
             questStatus = sScriptMgr->GetDialogStatus(target, go);
-            if (questStatus > 6)
+            if (questStatus == DIALOG_STATUS_SCRIPTED_NO_STATUS)
                 questStatus = WorldSession::getDialogStatus(target, go);
             if (questStatus > DIALOG_STATUS_UNAVAILABLE)
                 return true;
