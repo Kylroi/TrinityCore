@@ -377,7 +377,8 @@ class spell_item_flask_of_the_north : public SpellScriptLoader
             void HandleDummy(SpellEffIndex /*effIndex*/)
             {
                 Player* caster = GetCaster()->ToPlayer();
-                uint32 flask_spell_id, spec_id;
+                uint32 flask_spell_id = SPELL_FLASK_OF_THE_NORTH_INT;
+                uint32 spec_id;
                 uint8 spec;
                 switch (caster->getClass())
                 {
