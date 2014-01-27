@@ -2226,7 +2226,7 @@ void GameObject::GetRespawnPosition(float &x, float &y, float &z, float* ori /* 
         *ori = GetOrientation();
 }
 
-float GameObject::GetInteractionDistance()
+float GameObject::GetInteractionDistance() const
 {
     switch (GetGoType())
     {
@@ -2236,6 +2236,7 @@ float GameObject::GetInteractionDistance()
         case GAMEOBJECT_TYPE_MAILBOX:
             return 10.0f;
         case GAMEOBJECT_TYPE_FISHINGHOLE:
+        case GAMEOBJECT_TYPE_FISHINGNODE:
             return 20.0f + CONTACT_DISTANCE; // max spell range
         default:
             return INTERACTION_DISTANCE;
